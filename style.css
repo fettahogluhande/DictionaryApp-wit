@@ -33,14 +33,18 @@ body {
     border-bottom: 3px solid #ae9cff;
     font-size: 16px;
 }
-.search-box button {
+.search-button {
     padding: 15px 0;
     width: 25%;
-    background-color: #ae9cff;
+    background-color:#7b68ee;
     border: none;
     outline: none;
     color: #ffffff;
     border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+.search-button:active {
+    background-color: #ae9cff;
 }
 .result {
     position: relative;
@@ -56,10 +60,13 @@ body {
 }
 .result button {
     background-color: transparent;
-    color: #ae9cff;
+    color: #7b68ee;
     border: none;
     outline: none;
     font-size: 18px;
+}
+.result button:active {
+    color: #ae9cff; /* Change the color of the audio sign when clicked */
 }
 .result .details {
     display: flex;
