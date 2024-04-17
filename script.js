@@ -7,21 +7,22 @@ btn.addEventListener("click", async () => { // Mark the callback function as asy
     let inpWord = document.getElementById("inp-word").value;
 
     try {
-        const response = await fetch("/saveWord", {
-          method: "POST",
-          headers: {
+      const response = await fetch("http://localhost:8000/saveWord", {
+        method: "POST",
+        headers: {
             "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ word: inpWord }),
-        });
-        if (response.ok) {
+        },
+        body: JSON.stringify({ word: inpWord }),
+    });
+    
+      if (response.ok) {
           console.log("Word saved successfully");
-        } else {
+      } else {
           console.error("Failed to save word");
-        }
-      } catch (error) {
-        console.error("Error saving word:", error);
       }
+  } catch (error) {
+      console.error("Error saving word:", error);
+  }
 
     fetch(`${url}${inpWord}`)
         .then((response) => response.json())

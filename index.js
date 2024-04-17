@@ -38,6 +38,7 @@ app.use((req, res, next) => {
     next();
 });
 
+  
 app.get("/getWord", async (req, res) => {
     const wordData = await UserModel.find();
     res.json(wordData);
@@ -45,12 +46,22 @@ app.get("/getWord", async (req, res) => {
 
 app.post("/saveWord", async (req, res) => {
     const { word } = req.body;
+  
     try {
-        const wordEntry = new UserModel({ words: word });
-        await wordEntry.save();
-        res.status(201).json({ message: "Word saved successfully" });
+      // Create a new document instance
+      const newWord = new UserModel({
+        words: word
+      });
+  
+      // Save the document to the database
+      await newWord.save();
+  
+      // Send successful response to the client
+      res.status(201).json({ message: "Word saved successfully" });
     } catch (error) {
-        console.error("Error saving word:", error);
-        res.status(500).json({ error: "Internal server error" });
+      // Handle errors and send appropriate response
+      console.error("Error saving word:", error);
+      res.status(500).json({ error: "Internal server error" });
     }
-});
+  });
+  
