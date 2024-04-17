@@ -1,5 +1,29 @@
 {
   "dependencies": {
-    "mongodb": "^6.5.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1"
+  },
+  "name": "dictionaryapp-wit",
+  "description": "connect mongodb with express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fettahogluhande/DictionaryApp-wit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fettahogluhande/DictionaryApp-wit/issues"
+  },
+  "homepage": "https://github.com/fettahogluhande/DictionaryApp-wit#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
