@@ -7,7 +7,7 @@ btn.addEventListener("click", async () => { // Mark the callback function as asy
     let inpWord = document.getElementById("inp-word").value;
 
     try {
-      const response = await fetch("http://localhost:8000/saveWord", {
+      const response = await fetch("http://35.196.33.32:8000/saveWord", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
